@@ -9,7 +9,7 @@ public final class Constant {
 	
 	//CONSTANTES CONVERSIÓN DIVISAS
 	public static final double COPUSD = 0.00021;
-	public static final double USDCOP = 4744.60;
+	public static final double USDCOP = 4744.6;
 	public static final double COPGBP = 0.00017;
 	public static final double GBPCOP = 5775.95;
 	public static final double COPJPY = 0.028;

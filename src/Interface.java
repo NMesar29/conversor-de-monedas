@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.text.DecimalFormat;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -93,7 +94,7 @@ public class Interface extends JFrame{
 		labelResultado.setOpaque(true);
 		labelResultado.setBackground(colorGris);
 		labelResultado.setBounds(86, 360, 328, 87);
-		labelResultado.setFont(new Font("arial",1,50));
+		labelResultado.setFont(new Font("arial",1,30));
 		labelResultado.setBorder(BorderFactory.createLineBorder(Color.black,1));
 		
 		panel.add(labelTitulo);
@@ -208,6 +209,8 @@ public class Interface extends JFrame{
 	}
 
 	private void callbackBotones() {
+		
+		DecimalFormat df = new DecimalFormat("#.00");
 		//Acción Botón Limpiar
 		ActionListener bttLimpiar = new ActionListener() {
 			@Override
@@ -227,7 +230,7 @@ public class Interface extends JFrame{
 					String conversion = listaTipoConversion.getSelectedItem().toString();
 					double texto_valor = Double.parseDouble(txtValorIngresado.getText());
 					Conversion conversion_valor = new Conversion(conversion,texto_valor);
-					labelResultado.setText(Double.toString(conversion_valor.realizarConversion())+conversion_valor.generarSimbolo());
+					labelResultado.setText(df.format(conversion_valor.realizarConversion())+conversion_valor.generarSimbolo());
 				}catch(NumberFormatException ex) {
 					System.out.println("Excepcion atrapada");
 				}
